@@ -1,38 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 import './index.css'
-import ErrorPage from './pages/ErrorPage';
-import Root from './Layout/Root';
-import Home from './pages/Home';
-import Blogs from './pages/Blogs';
-import Bookmarks from './pages/Bookmarks';
+import { router } from './Routes/Route';
 
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Root />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        path: "/",
-        element: <Home></Home>,
-      },
-      {
-        path: "/blogs",
-        element: <Blogs></Blogs>,
-      },
-      {
-        path: "/bookmarks",
-        element: <Bookmarks></Bookmarks>,
-      },
-    ],
-  },
-]);
 
 
 
