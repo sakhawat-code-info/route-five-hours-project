@@ -1,17 +1,25 @@
 import { useState } from "react";
 import { Link, Outlet, useLoaderData } from "react-router-dom";
-
+import { FaBookmark } from "react-icons/fa";
+import { saveDataToLocalHost } from "../utility";
 
 const BlogDetails = () => {
     const blogDetails = useLoaderData();
     const { title } = blogDetails;
 
     const [tabIndex, setTabIndex] = useState(0);
+
+    const handleToBookmark = (blogDetails) => {
+        // console.log(blogDetails);
+        saveDataToLocalHost(blogDetails);
+
+    }
+
     return (
         <div>
             <article className="max-w-2xl px-6 py-24 mx-auto space-y-12 dark:bg-gray-100 dark:text-gray-900">
-                <div>
-                    <h1>btn</h1>
+                <div onClick={() => handleToBookmark(blogDetails)} className="text-center">
+                    <FaBookmark />
                 </div>
 
                 <div className="w-full mx-auto space-y-4 text-center">
